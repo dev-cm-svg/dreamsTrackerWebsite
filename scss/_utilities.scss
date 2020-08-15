@@ -1,6 +1,22 @@
-.container {
-    max-width: 1100px;
-    padding: 0 30px;
-    margin: 0 auto;
-    overflow: auto;
+%container {
+  max-width: 1100px;
+  padding: 0 30px;
+  margin: 20px auto;
+  overflow: auto;
+  height: 670px;
+}
+
+// content of every section
+%content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  img {
+    width: 300px;
   }
+  h1 {
+    font-size: 50px;
+    line-height: 1.2;
+  }
+}

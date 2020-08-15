@@ -16,5 +16,12 @@
 
 .btn-secondary {
   @extend %btn;
-  @include set-background($secondary-color);
+  @include set-background($light-color);
+}
+
+.btn-light{
+  @extend %btn;
+  @include set-background($light-color);
+  border-color: $light-color;
+}
 }

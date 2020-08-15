@@ -3,24 +3,36 @@
 @import "buttons";
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  margin: 0 10px;
+  padding: 0 10px;
 }
 
 body {
-  background-color: $light-color;
+  // background-color: $light-color;
   font-family: $font-stack;
-  line-height: 1.6;
+  // line-height: 1.6;
+  // display: flex;
+  // flex-direction: column;
 }
 
 .showcase {
-  height: 600px;
+  height: 670px;
   @include set-background($primary-color);
 
-  nav {
+  .nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    font-size: 1.2rem;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    padding: 0 10px;
+    box-shadow: 0px 2px 2px 0px rgba(119, 117, 117, 0.75);
+    background-color: $primary-color;
+    img {
+      width: 48px;
+    }
 
     ul {
       display: flex;
@@ -28,7 +40,7 @@ body {
     }
 
     li {
-      padding: 15px;
+      padding: 5px 15px;
     }
 
     a:hover {
@@ -40,28 +52,49 @@ body {
     }
   }
 
-  &-content {
-    display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-    margin-top: 30px;
-
-    img {
-      width: 50%;
-    }
-
-    h1 {
-      font-size: 50px;
-      line-height: 1.2;
-    }
+ 
   }
 }
-
+.showcase-content {
+  @extend %content;
+ }
 a {
   text-decoration: none;
+  background: cornsilk;
+  
 }
 img {
   width: 100%;
 }
+
+#about {
+  @extend %content;
+  // @extend %container;
+  background: url("https://source.unsplash.com/bZZp1PmHI0E/1600x900") no-repeat
+    center center fixed;
+  background-size: cover;
+  @include set-background($primary-color);
+  height: 670px;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+
+  text-align: center;
+}
+
+#services {
+  @extend %content;
+  width: 100%;
+  display: flex;
+  background: url(https://source.unsplash.com/K2tdx2mFDHc/1600x900) no-repeat
+    center center/cover;
+  @include set-background($primary-color);
+  height: 670px;
+  margin: 0 auto;
+  text-align: center;
+  h1 {
+    text-align: center;
+  }
+}
+
 @import "mobile";
